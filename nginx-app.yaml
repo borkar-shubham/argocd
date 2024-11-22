@@ -8,8 +8,8 @@ spec:
   source:
     repoURL: https://github.com/borkar-shubham/argocd-apps
     targetRevision: HEAD
-    path: 
-  destination: nginx
+    path: nginx
+  destination:
     server: https://kubernetes.default.svc
     namespace: nginx
   syncPolicy:
