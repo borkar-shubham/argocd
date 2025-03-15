@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cbz-java-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/borkar-shubham/argocd-apps
+    targetRevision: HEAD
+    path: cbz-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
